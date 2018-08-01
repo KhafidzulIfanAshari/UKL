@@ -1,0 +1,139 @@
+$base: "../img/";
+$primary: #FD2E2E;
+$secondary: #CF1B1B;
+$dark: #900D0D;
+$bgBlack: #1f1f1f;
+
+::-webkit-scrollbar{width: 5px;background: none;}
+::-webkit-scrollbar-track{background: lighten($bgBlack, 30%);}
+::-webkit-scrollbar-thumb{background: $primary;}
+
+*{margin: 0;padding: 0;}
+a{text-decoration: none !important;outline: none;}
+
+.navFix{
+    padding: 10px 5px;color: white;
+    .brand{
+        padding: 0 20px;
+    }
+    #menu{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+#navHide{
+    transform: translateX(-100%);transition: .5s;
+    #navHideContent{
+        background: $bgBlack;height: 100vh;color: white;
+        .navContent{
+            color: white;padding: 15px 0;
+        }
+        #closeMenu{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#header{
+    width: 100%;height: 100vh;
+    .jumbotron{
+        height: 100vh;color: white;background: url($base + "lp.jpg") fixed center;background-size: cover;
+        .container{
+            padding: 25vh 0 0 0;
+            .fa-angle-double-down{
+                animation-name: floating;animation-iteration-count: infinite;animation-duration: 1s;cursor: pointer;
+            }
+        }
+    }
+}
+@keyframes floating{
+    0% {filter: drop-shadow(0 5px 2px rgba(black, 0.9));}
+    50% {filter: drop-shadow(0 15px 2px rgba(black, 0.9));}
+    100% {filter: drop-shadow(0 5px 2px rgba(black, 0.9));}
+}
+.underlineCustom{
+    width: 40px;height: 5px;background: $secondary;
+}
+.imgContainer{
+    width: 100%;height: 200px;position: relative;overflow: hidden;
+    .imgDesc{
+        width: 100%;position: absolute;bottom: 0;background: rgba(black, 0.7);
+        transform: translateY(100%);padding: 20px 0;color: white;letter-spacing: 5px;
+        transition: .2s;
+    }
+    &:hover{
+        cursor: pointer;
+        .imgDesc{
+            transform: translateY(0%);
+        }
+    }
+}
+.serviceCustom{
+    background-size: cover !important;
+    .serviceDesc{
+        background: white;
+    }
+}
+
+.formVal{
+    width: 100%;height: 100vh;background: url($base + "service.jpeg") no-repeat center;background-size: cover;
+    .formContainer{
+        background: white;height: 100vh;
+    }
+}
+
+//-----------------|-Form Input-|-----------------
+.form-wrapper {
+    max-width: 30%;min-width: 300px;padding: 50px 30px 50px 30px;margin: 50px auto;   background-color: #ffffff;border-radius: 5px;box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+}
+  
+.form-group {
+    position:relative;  
+    & + .form-group {
+        margin-top: 30px;
+    }
+}
+  
+.form-label {
+    position: absolute;left: 0;top: 10px;color: #999;background-color: #fff;z-index: 10;transition: transform 150ms ease-out, font-size 150ms ease-out;
+    &:hover{
+        cursor: text;
+    }
+}
+  
+.focused .form-label {
+    transform: translateY(-125%);font-size: .75em;color: $primary;
+}
+  
+.form-input {
+    position: relative;padding: 12px 0px 5px 0;width: 100%;outline: 0;border: 0;box-shadow: 0 1px 0 0 #e5e5e5;transition: box-shadow 150ms ease-out;
+    
+    &:focus {
+        box-shadow: 0 2px 0 0 $primary;
+    }
+}
+  
+.form-input.filled {
+    box-shadow: 0 2px 0 0 $secondary;
+}
+//-----------------|-Form Input-|-----------------
+
+//Book
+
+#navigationBook{
+    height: 100vh;width: 230px;background: $bgBlack;color: white;position: fixed;
+    z-index: 99;top: 0;left: 0;
+    h6{
+        color: white;margin: 15px 0;
+    }
+}
+.roomClass{
+    box-shadow: 1px 2px 1px lighten($bgBlack, 20%);padding: 15px 0;
+    .roomClassImg{
+        width: 100%;height: 150px;overflow: hidden;
+    }
+}
